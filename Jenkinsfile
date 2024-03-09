@@ -1,23 +1,22 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                build 'PES2UG21CS570-1'
                 sh 'g++ hello.cpp -o output'
+                echo'build successful!'
             }
         }
-
         stage('Test') {
             steps {
                 sh './test'
+                echo'test successful!'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'deploy'
+                echo 'deployed!'
             }
         }
     }
